@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31410.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarinaData", "MarinaData\MarinaData.csproj", "{7A00B041-9723-4130-A643-B0610CC2BDCC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarinaGUI", "MarinaGUI\MarinaGUI.csproj", "{6E5927C7-0326-482D-8417-13B684A15535}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7A00B041-9723-4130-A643-B0610CC2BDCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A00B041-9723-4130-A643-B0610CC2BDCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A00B041-9723-4130-A643-B0610CC2BDCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A00B041-9723-4130-A643-B0610CC2BDCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E5927C7-0326-482D-8417-13B684A15535}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E5927C7-0326-482D-8417-13B684A15535}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E5927C7-0326-482D-8417-13B684A15535}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E5927C7-0326-482D-8417-13B684A15535}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E44087F3-D9A6-467E-9E9D-9C0E2C11F5A3}
+	EndGlobalSection
+EndGlobal
