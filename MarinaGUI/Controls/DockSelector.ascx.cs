@@ -27,8 +27,8 @@ namespace MarinaGUI.Controls
             if (!IsPostBack)
             {
                 // populate the drop down list
-                ddlDock.DataSource = SlipManager.GetAll();
-                ddlDock.DataValueField = "DockID";
+                ddlDock.DataSource = DockManager.GetAll();
+                ddlDock.DataValueField = "ID";
                 ddlDock.DataTextField = "Name";
                 ddlDock.DataBind();
                 ddlDock.SelectedIndex = 0;

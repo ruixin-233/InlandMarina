@@ -8,11 +8,11 @@ namespace MarinaData
 {
     public static class DockManager
     {
-        public static Dock FindAvaliableSlip(int id)
+        public static List<Dock> GetAll()
         {
             MarinaEntities db = new MarinaEntities();
-            Dock dock = db.Docks.SingleOrDefault(d => d.ID == id);
-            return dock;
+            List<Dock> docks = db.Docks.ToList();
+            return docks;
         }
     }
 }

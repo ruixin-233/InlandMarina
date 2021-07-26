@@ -18,7 +18,8 @@ namespace MarinaGUI
         // method to handle the event CourseSelect
         private void DockSelector_DockSelect(object sender, Controls.DockEventArgs e)
         {
-            lstSlips.Items.Add(e.DockID);
+            lstSlips.Items.Clear();
+            lstSlips.Items.Add(e.SlipID);
         }
     }
 }
