@@ -16,7 +16,7 @@ namespace MarinaData
             var slips = db.Slips.Join(db.Docks,
                                       s => s.DockID,
                                       d => d.ID,
-                                      (s, d) => new { dockID = d.ID, s.DockID, d.Name, slipID = s.ID }).
+                                      (s, d) => new { s.DockID, d.Name, s.ID }).
                                       ToList();
             return slips;
         }
@@ -24,7 +24,7 @@ namespace MarinaData
         public static Slip FindDock(int id)
         {
             MarinaEntities db = new MarinaEntities();
-            Slip slip = db.Slips.SingleOrDefault(s => s.DockID == id);
+            Slip slip = db.Slips.SingleOrDefault(s => s.ID == id);
             return slip;
         }
 

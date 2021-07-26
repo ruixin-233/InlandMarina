@@ -5,9 +5,13 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     
     <h2>Avaliable slips</h2>
-    <uc1:DockSelector runat="server" id="DockSelector" /> <br />
+    <br />
+    <uc1:DockSelector runat="server" id="DockSelector" /> 
+    <br />
+    <br />
+    <asp:ListBox ID="lstSlips" runat="server" Height="195px" Width="130px"></asp:ListBox>
 
-    <asp:ListBox ID="lstSlips" runat="server"></asp:ListBox>
+    <asp:Label ID="lblDock" runat="server" Text=""></asp:Label>
 
 </asp:Content>
 
