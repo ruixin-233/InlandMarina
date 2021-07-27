@@ -4,7 +4,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     
-    <h2>Avaliable slips</h2>
+    <h2>Avaliable Slips</h2>
     <br />
     <uc1:DockSelector runat="server" id="DockSelector" /> 
     <br />

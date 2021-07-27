@@ -9,23 +9,25 @@ namespace MarinaData
 {
     public static class SlipManager
     {
-        public static IList GetAll()
+        public static List<Slip> GetAll()
         {
             MarinaEntities db = new MarinaEntities();
-
-            var slips = db.Slips.Join(db.Docks,
-                                      s => s.DockID,
-                                      d => d.ID,
-                                      (s, d) => new { s.DockID, d.Name, s.ID }).
-                                      ToList();
+            List<Slip> slips = db.Slips.ToList();
             return slips;
         }
 
-        public static Slip FindDock(int id)
+        //public static List<Slip> SlipsinDock(int id)
+        //{
+        //    MarinaEntities db = new MarinaEntities();
+        //    List<Slip> slips = db.Slips.Where(s => s.DockID == id).ToList();
+        //    return slips;
+        //}
+
+        public static List<Slip> AvailableSlip(int id)
         {
             MarinaEntities db = new MarinaEntities();
-            Slip slip = db.Slips.SingleOrDefault(s => s.ID == id);
-            return slip;
+            var availableSlips = db.Slips.Where(s => s.Leases.Count == 0 && s.DockID == id).ToList();
+            return availableSlips;
         }
 
     }

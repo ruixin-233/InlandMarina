@@ -53,6 +53,8 @@
     <Compile Include="Customer.cs">
       <DependentUpon>MarinaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="CustomerDTO.cs" />
+    <Compile Include="CustomerManager.cs" />
     <Compile Include="Dock.cs">
       <DependentUpon>MarinaModel.tt</DependentUpon>
     </Compile>

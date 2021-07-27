@@ -14,7 +14,7 @@ namespace MarinaGUI.Controls
         public event DockSelectionHandler DockSelect;
 
         // public preoperties
-        public Slip SelectedDock { get; set; }
+        public List<Slip> SelectedDock { get; set; }
 
         public bool AllowAutoPostBack
         {
@@ -38,14 +38,14 @@ namespace MarinaGUI.Controls
         // user selected from the drop down list
         protected void ddlDock_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // fire the event CourseSelect
+            // fire the event DockSelect
             if (DockSelect != null)    // if the event was subscribed to
             {
                 // get the id from the drop down list
                 int id = Convert.ToInt32(ddlDock.SelectedValue);
 
-                // find the course with this id
-                Slip slipInDock = SlipManager.FindDock(id);
+                // find slips with dock id
+                var slipInDock = SlipManager.AvailableSlip(id);
 
                 // set property
                 SelectedDock = slipInDock;
@@ -53,8 +53,8 @@ namespace MarinaGUI.Controls
                 // instantiate the DockEventArgs class
                 DockEventArgs arg = new DockEventArgs
                 {
-                    DockID = slipInDock.DockID.ToString(),
-                    SlipID = slipInDock.ID.ToString(),
+                    DockID = id.ToString(),
+                    SlipID = slipInDock
                 };
 
                 // invoke the event

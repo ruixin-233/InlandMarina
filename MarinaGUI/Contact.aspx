@@ -6,7 +6,8 @@
     <address>
         Inland Lake Marina<br />
         Box 123<br />
-        Inland Lake, Arizona<br />        86038 <br />
+        Inland Lake, Arizona<br />
+        86038 <br />
     </address>
         
     <address>

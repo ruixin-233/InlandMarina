@@ -12,14 +12,12 @@ namespace MarinaGUI
         protected void Page_Load(object sender, EventArgs e)
         {
             DockSelector.DockSelect += DockSelector_DockSelect; // subscribe to the event
-
         }
 
         // method to handle the event CourseSelect
         private void DockSelector_DockSelect(object sender, Controls.DockEventArgs e)
         {
-            lstSlips.Items.Clear();
-            lstSlips.Items.Add(e.SlipID);
+            lstSlips.DataSource = e.SlipID;
         }
     }
 }
