@@ -53,7 +53,18 @@
                         <li><a runat="server" href="~/">Home</a></li>
                         <li><a runat="server" href="~/About">About</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
+                        <li><a runat="server" href="~/AvaliableSlip">AvaliableSlip</a></li>
                     </ul>
+
+                <ul class="navbar-nav rm">
+                    <li class="nav-item">
+                        <a class="nav-link text-light" runat="server" 
+                            href="~/Registration" title="Register">
+                            <span class="fa fa-user"></span>
+                        </a>
+                    </li>
+                </ul>
+
                 </div>
             </div>
         </div>
