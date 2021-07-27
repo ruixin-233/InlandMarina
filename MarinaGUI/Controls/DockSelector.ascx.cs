@@ -13,13 +13,22 @@ namespace MarinaGUI.Controls
         // declare event
         public event DockSelectionHandler DockSelect;
 
-        // public preoperties
+        // public properties
         public List<Slip> SelectedDock { get; set; }
 
         public bool AllowAutoPostBack
         {
             get { return ddlDock.AutoPostBack; }
             set { ddlDock.AutoPostBack = value; }
+        }
+
+        // return ddlDock property
+        public DropDownList DDL_Dock_Control
+        {
+            get
+            {
+                return ddlDock;
+            }
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -32,6 +41,7 @@ namespace MarinaGUI.Controls
                 ddlDock.DataTextField = "Name";
                 ddlDock.DataBind();
                 ddlDock.SelectedIndex = 0;
+             
             }
         }
 

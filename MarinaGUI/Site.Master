@@ -52,7 +52,7 @@
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Home</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
-                        <li><a runat="server" href="~/AvaliableSlip">AvaliableSlip</a></li>
+                        <li><a runat="server" href="~/AvaliableSlip">Avaliable Slips</a></li>
                         <li><a runat="server" href="~/Login">Login</a></li>
                         <li><a runat="server" href="~/Registration">Registration</a></li>
                     </ul>
@@ -65,7 +65,7 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+                <p>&copy; <%: DateTime.Now.Year %> - Inland Marina Ltd</p>
             </footer>
         </div>
 

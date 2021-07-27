@@ -4,14 +4,17 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     
-    <h2>Avaliable Slips</h2>
+    <h2>Check Avaliable Slips</h2>
     <br />
+    <asp:Label ID="lblDock1" runat="server" Text="Pick a Dock: "></asp:Label>
     <uc1:DockSelector runat="server" id="DockSelector" /> 
     <br />
     <br />
+    <asp:Label ID="lblDock2" runat="server" Text="Avaliable Slips: "></asp:Label>
+    <br />
     <asp:ListBox ID="lstSlips" runat="server" Height="195px" Width="130px"></asp:ListBox>
 
-    <asp:Label ID="lblDock" runat="server" Text=""></asp:Label>
+    
 
 </asp:Content>
 

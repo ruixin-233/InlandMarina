@@ -15,6 +15,15 @@ namespace MarinaGUI
     {
 
         /// <summary>
+        /// lblDock1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDock1;
+
+        /// <summary>
         /// DockSelector control.
         /// </summary>
         /// <remarks>
@@ -24,6 +33,15 @@ namespace MarinaGUI
         protected global::MarinaGUI.Controls.DockSelector DockSelector;
 
         /// <summary>
+        /// lblDock2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDock2;
+
+        /// <summary>
         /// lstSlips control.
         /// </summary>
         /// <remarks>
@@ -31,14 +49,5 @@ namespace MarinaGUI
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListBox lstSlips;
-
-        /// <summary>
-        /// lblDock control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDock;
     }
 }

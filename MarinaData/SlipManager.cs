@@ -16,18 +16,18 @@ namespace MarinaData
             return slips;
         }
 
-        //public static List<Slip> SlipsinDock(int id)
-        //{
-        //    MarinaEntities db = new MarinaEntities();
-        //    List<Slip> slips = db.Slips.Where(s => s.DockID == id).ToList();
-        //    return slips;
-        //}
-
         public static List<Slip> AvailableSlip(int id)
         {
             MarinaEntities db = new MarinaEntities();
-            var availableSlips = db.Slips.Where(s => s.Leases.Count == 0 && s.DockID == id).ToList();
+            var availableSlips = db.Slips.
+                Where(s => s.Leases.Count == 0 && s.DockID == id).ToList();
             return availableSlips;
+        }
+
+        public static void Leased()
+        {
+            MarinaEntities db = new MarinaEntities();
+            
         }
 
     }
