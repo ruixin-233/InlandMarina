@@ -18,23 +18,23 @@ namespace MarinaGUI.Controls
             if (IsUpdate)
             {
                 // display current data values for the registration
-                if (Session["Id"] != null && txtFirstName.Text == string.Empty)
+                if (Session["CustomerID"] != null && txtFirstName.Text == string.Empty)
                 // only need to do it when text boxes empty
                 {
                     // get customer ID out of the Session
                     int custID = Convert.ToInt32(Session["Id"]);
 
                     // get authentication record for this student
-                    Customer authCust = CustomerManager.Find(custID);
+                    Authentication authCust = MarinaManager.FindAuthentication(custID);
                     if (authCust != null)
                     {
                         // display data in wizard's textboxes
-                        txtFirstName.Text = authCust.FirstName;
-                        txtLastName.Text = authCust.LastName;
-                        txtPhone.Text = authCust.Phone;
-                        txtCity.Text = authCust.City;
-                        txtUserName.Text = authCust.FirstName;
-                        txtPassword.Text = authCust.LastName;
+                        txtFirstName.Text = authCust.Customer.FirstName;
+                        txtLastName.Text = authCust.Customer.LastName;
+                        txtPhone.Text = authCust.Customer.Phone;
+                        txtCity.Text = authCust.Customer.City;
+                        txtUserName.Text = authCust.Username;
+                        txtPassword.Text = authCust.Password;
                     }
                 }
             }
@@ -45,17 +45,17 @@ namespace MarinaGUI.Controls
         {
             if (IsUpdate)
             {
-                if (Session["Id"] != null)
+                if (Session["CustomerID"] != null)
                 {
                     // get customer id out of Session
                     int custID = Convert.ToInt32(Session["Id"]);
-                    Customer authCust = CustomerManager.Find(custID);
-                    authCust.FirstName = txtFirstName.Text;
-                    authCust.LastName = txtLastName.Text;
-                    authCust.Phone = txtPhone.Text;
-                    authCust.City = txtCity.Text;
+                    Authentication authCust = MarinaManager.FindAuthentication(custID);
+                    authCust.Customer.FirstName = txtFirstName.Text;
+                    authCust.Customer.LastName = txtLastName.Text;
+                    authCust.Customer.Phone = txtPhone.Text;
+                    authCust.Customer.City = txtCity.Text;
                     // pass to the manager class for update
-                    CustomerManager.Update(authCust);
+                    MarinaManager.UpdateAuthentication(authCust);
 
                     // force the user to log in again  after update
                     FormsAuthentication.SignOut();// remove from auth ticket
@@ -66,16 +66,19 @@ namespace MarinaGUI.Controls
             else // inserting new record
             {
                 // new data from text boxes (no Id nor StudentId, just the collected data)
-                Customer cust = new Customer
+                Authentication authCust = new Authentication
                 {
-                    FirstName = txtFirstName.Text,
-                    LastName = txtLastName.Text,
-                    Phone = txtPhone.Text,
-                    City = txtCity.Text,
+                    Username = txtUserName.Text,
+                    Password = txtPassword.Text,
+                    Customer = new Customer
+                    {
+                        FirstName = txtFirstName.Text,
+                        LastName = txtLastName.Text,
+                        Phone = txtPhone.Text,
+                        City = txtCity.Text
+                    }
                 };
-
-
-                CustomerManager.Add(cust); // pass to the manager class for Add
+                MarinaManager.AddAuthentication(authCust); // pass to the manager class for Add
                 Response.Redirect("~/Login"); // give the user opportunity to log in
 
             }

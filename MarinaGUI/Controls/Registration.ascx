@@ -1,6 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Registration.ascx.cs" Inherits="MarinaGUI.Controls.Registration" %>
-<h3>Add/Update Registration</h3>
-<br />
+
 <asp:Wizard ID="Wizard1" runat="server" ActiveStepIndex="0" OnFinishButtonClick="Wizard1_FinishButtonClick">
     <WizardSteps>
         <asp:WizardStep ID="WizardStep1" runat="server" Title="Student Profile">

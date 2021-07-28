@@ -3,5 +3,7 @@
 <%@ Register Src="~/Controls/Registration.ascx" TagPrefix="uc1" TagName="Registration" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <h2>Update Registration Info</h2>
+    <br />
     <uc1:Registration runat="server" ID="uxRegistration" />
 </asp:Content>

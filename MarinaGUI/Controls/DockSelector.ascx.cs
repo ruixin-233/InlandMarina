@@ -36,7 +36,7 @@ namespace MarinaGUI.Controls
             if (!IsPostBack)
             {
                 // populate the drop down list
-                ddlDock.DataSource = DockManager.GetAll();
+                ddlDock.DataSource = MarinaManager.GetAllDocks();
                 ddlDock.DataValueField = "ID";
                 ddlDock.DataTextField = "Name";
                 ddlDock.DataBind();
@@ -55,10 +55,10 @@ namespace MarinaGUI.Controls
                 int id = Convert.ToInt32(ddlDock.SelectedValue);
 
                 // find slips with dock id
-                var slipInDock = SlipManager.AvailableSlip(id);
+                var slipInDock = MarinaManager.AvailableSlip(id);
 
                 // set property
-                SelectedDock = slipInDock;
+                //SelectedDock = slipInDock;
 
                 // instantiate the DockEventArgs class
                 DockEventArgs arg = new DockEventArgs

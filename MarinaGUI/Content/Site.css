@@ -30,7 +30,7 @@ textarea {
 }
 
 .navbar-inverse {
-    background-color: #224C72;
+    background-color: #38a8c7;
     color: whitesmoke;
 }
 
@@ -38,19 +38,10 @@ textarea {
     position: absolute;
     bottom: 0;
     width: 100%;
-    white-space: nowrap;
-    line-height: 50px; /* Vertically center the text there */
-    background-color: #224C72;
+    height: 50px; 
+    background-color: #38a8c7;
     text-align: center;
-}
 
-.banner-logo {
-    display: block;
-    /* path to image is relative to location of this css file */
-    background-image: url('../Images/inlandbanner.jpg');
-    width: 428px;
-    height: 73px;
-    margin-left: 0; /* make it stay on the left */
 }
 
 .rm {
@@ -70,3 +61,15 @@ textarea {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
 }
+
+.gridView {
+    max-height: 400px;
+    overflow: auto;
+}
+
+    .gridView th {
+        font-size: 12px;
+        font-weight: bold;
+        height: 25px;
+        white-space: nowrap;
+    }

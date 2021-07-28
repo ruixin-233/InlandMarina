@@ -8,7 +8,6 @@ namespace MarinaData
 {
     public static class MarinaManager
     {
-
         ///////////////////////////    Authentication Manager  ////////////////////////
         public static CustomerDTO Authenticate(string username, string password)
         {
@@ -71,11 +70,6 @@ namespace MarinaData
             db.SaveChanges();
         }
 
-
-
-
-
-
         ////////////////////////////////    Customer Manager    ////////////////////////////////
         public static Customer FindCustomer(int id)
         {
@@ -104,7 +98,7 @@ namespace MarinaData
 
 
         /////////////////////////////////     Dock Manager    ////////////////////////////////
-        public static List<Dock> GetAll()
+        public static List<Dock> GetAllDocks()
         {
             MarinaEntities db = new MarinaEntities();
             List<Dock> docks = db.Docks.ToList();

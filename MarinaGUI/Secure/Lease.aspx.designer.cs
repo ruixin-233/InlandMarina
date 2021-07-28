@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MarinaGUI
+namespace MarinaGUI.Secure
 {
 
 
-    public partial class AvaliableSlip
+    public partial class Lease
     {
 
         /// <summary>
@@ -42,12 +42,21 @@ namespace MarinaGUI
         protected global::System.Web.UI.WebControls.Label lblDock2;
 
         /// <summary>
-        /// gvSlips control.
+        /// lstSlips control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvSlips;
+        protected global::System.Web.UI.WebControls.ListBox lstSlips;
+
+        /// <summary>
+        /// btnLease control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnLease;
     }
 }

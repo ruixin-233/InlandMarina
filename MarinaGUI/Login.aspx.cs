@@ -19,7 +19,7 @@ namespace MarinaGUI
         protected void btnAuthenticate_Click(object sender, EventArgs e)
         {
             // pass login credentials to AuthenticationManager
-            CustomerDTO custDTO = CustomerManager.
+            CustomerDTO custDTO = MarinaManager.
                 Authenticate(txtUserName.Text, txtPassword.Text);
             if (custDTO == null) // failed authentication
             {
@@ -32,12 +32,11 @@ namespace MarinaGUI
             {
                 // preserve stdent id in the session for possible update registration
                 Session.Add("CustomerID", custDTO.ID);
-                //Session["StudentID"] = student.ID;
 
                 // redirect to original page that was requested
-                FormsAuthentication.RedirectFromLoginPage(custDTO.FirstName, false);
-                // the first argument is what goes into authentication ticket,
-                // second argument false means dont's create persistent cookie
+                FormsAuthentication.RedirectFromLoginPage(custDTO.FullName, false);
+
+                Response.Redirect("~/Secure/Lease");
             }
         }
 

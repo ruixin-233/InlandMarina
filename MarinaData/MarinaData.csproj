@@ -57,11 +57,9 @@
       <DependentUpon>MarinaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="CustomerDTO.cs" />
-    <Compile Include="CustomerManager.cs" />
     <Compile Include="Dock.cs">
       <DependentUpon>MarinaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DockManager.cs" />
     <Compile Include="Lease.cs">
       <DependentUpon>MarinaModel.tt</DependentUpon>
     </Compile>
@@ -85,7 +83,6 @@
     <Compile Include="Slip.cs">
       <DependentUpon>MarinaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="SlipManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="MarinaModel.edmx">
