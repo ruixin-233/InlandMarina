@@ -43,6 +43,7 @@ namespace MarinaGUI.Secure
 
         }
 
+
         //private void showListBoxItem(List<Slip> list)
         //{
         //    lstSlips.Items.Clear();

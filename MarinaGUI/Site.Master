@@ -12,6 +12,7 @@
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
 
+
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link rel="stylesheet" 
@@ -102,7 +103,7 @@
             <hr />
         </div>
     </form>
-     <footer class="border-top footer text-light">
+     <footer class="align-middle footer text-light fixed-bottom">
         <div class="container">
             &copy; <%: DateTime.Now.Year %> - Inland Marina Ltd
         </div>

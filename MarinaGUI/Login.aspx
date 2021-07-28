@@ -14,7 +14,7 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <asp:Button ID="btnAuthenticate" runat="server" Text="Authenticate" 
+                    <asp:Button ID="btnAuthenticate" runat="server" Text="Authenticate"  
                         OnClick="btnAuthenticate_Click" />
                 </td>                
             </tr>

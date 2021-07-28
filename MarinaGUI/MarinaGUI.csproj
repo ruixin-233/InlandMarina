@@ -129,6 +129,7 @@
     <Content Include="Global.asax" />
     <Content Include="Images\inlandbanner.jpg" />
     <Content Include="Images\lighthouse.jpg" />
+    <Content Include="Images\lighthouse2.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
