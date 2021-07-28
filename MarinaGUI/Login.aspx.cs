@@ -31,7 +31,7 @@ namespace MarinaGUI
             else // authentication success
             {
                 // preserve stdent id in the session for possible update registration
-                Session.Add("Id", custDTO.ID);
+                Session.Add("CustomerID", custDTO.ID);
                 //Session["StudentID"] = student.ID;
 
                 // redirect to original page that was requested
