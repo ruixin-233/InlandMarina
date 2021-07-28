@@ -41,7 +41,7 @@ namespace MarinaGUI.Controls
                 ddlDock.DataTextField = "Name";
                 ddlDock.DataBind();
                 ddlDock.SelectedIndex = 0;
-             
+                ddlDock_SelectedIndexChanged(this, e);
             }
         }
 

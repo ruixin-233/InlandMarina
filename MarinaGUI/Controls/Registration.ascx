@@ -25,11 +25,11 @@
         <asp:WizardStep ID="WizardStep2" runat="server" Title="Security Credentials">
             <table class="table">
                 <tr>
-                    <td style="width: 150px">Username(First Name): </td>
+                    <td style="width: 150px">Username: </td>
                     <td><asp:TextBox ID="txtUserName" runat="server"></asp:TextBox></td>
                 </tr>
                 <tr>
-                    <td>Password(Last Name): </td>
+                    <td>Password: </td>
                     <td><asp:TextBox ID="txtPassword" runat="server"></asp:TextBox></td>
                 </tr>
             </table>

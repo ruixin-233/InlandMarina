@@ -42,13 +42,13 @@ namespace MarinaGUI.Secure
         protected global::System.Web.UI.WebControls.Label lblDock2;
 
         /// <summary>
-        /// lstSlips control.
+        /// gvSlips control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox lstSlips;
+        protected global::System.Web.UI.WebControls.GridView gvSlips;
 
         /// <summary>
         /// btnLease control.

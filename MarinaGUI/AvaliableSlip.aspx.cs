@@ -35,7 +35,8 @@ namespace MarinaGUI
             List<Slip> list = e.SlipID;
 
             gvSlips.DataSource = e.SlipID;
-            DataBind();
+            gvSlips.DataBind();
+
             //var avaliableSlips = MarinaManager.AvailableSlip(int.Parse(dockID));
             //gvSlips.DataSource = avaliableSlips;
             //showListBoxItem(list);
