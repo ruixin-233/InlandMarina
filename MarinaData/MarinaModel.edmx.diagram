@@ -12,6 +12,8 @@
         <AssociationConnector Association="MarinaModel.FK_LeaseCustomer" ManuallyRouted="false" />
         <AssociationConnector Association="MarinaModel.FK_SlipDock" ManuallyRouted="false" />
         <AssociationConnector Association="MarinaModel.FK_LeaseSlip" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="MarinaModel.Authentication" Width="1.5" PointX="5.25" PointY="5.125" />
+        <AssociationConnector Association="MarinaModel.FK__Authentic__Custo__2F10007B" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

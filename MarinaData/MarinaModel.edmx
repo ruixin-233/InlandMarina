@@ -4,7 +4,16 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="MarinaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="MarinaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Authentication">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="varchar" MaxLength="16" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="16" Nullable="false" />
+          <Property Name="CustomerID" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="Customer">
           <Key>
             <PropertyRef Name="ID" />
@@ -41,6 +50,18 @@
           <Property Name="Length" Type="int" Nullable="false" />
           <Property Name="DockID" Type="int" Nullable="false" />
         </EntityType>
+        <Association Name="FK__Authentic__Custo__2F10007B">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="Authentication" Type="Self.Authentication" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Authentication">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_LeaseCustomer">
           <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
           <End Role="Lease" Type="Self.Lease" Multiplicity="*" />
@@ -78,10 +99,15 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="MarinaModelStoreContainer">
+          <EntitySet Name="Authentication" EntityType="Self.Authentication" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Dock" EntityType="Self.Dock" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Lease" EntityType="Self.Lease" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Slip" EntityType="Self.Slip" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Authentic__Custo__2F10007B" Association="Self.FK__Authentic__Custo__2F10007B">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Authentication" EntitySet="Authentication" />
+          </AssociationSet>
           <AssociationSet Name="FK_LeaseCustomer" Association="Self.FK_LeaseCustomer">
             <End Role="Customer" EntitySet="Customer" />
             <End Role="Lease" EntitySet="Lease" />
@@ -95,8 +121,7 @@
             <End Role="Slip" EntitySet="Slip" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MarinaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -110,6 +135,7 @@
           <Property Name="Phone" Type="String" MaxLength="14" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="City" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Leases" Relationship="Self.FK_LeaseCustomer" FromRole="Customer" ToRole="Lease" />
+          <NavigationProperty Name="Authentications" Relationship="MarinaModel.FK__Authentic__Custo__2F10007B" FromRole="Customer" ToRole="Authentication" />
         </EntityType>
         <EntityType Name="Dock">
           <Key>
@@ -195,7 +221,34 @@
             <End Role="Slip" EntitySet="Slips" />
             <End Role="Lease" EntitySet="Leases" />
           </AssociationSet>
+          <EntitySet Name="Authentications" EntityType="MarinaModel.Authentication" />
+          <AssociationSet Name="FK__Authentic__Custo__2F10007B" Association="MarinaModel.FK__Authentic__Custo__2F10007B">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="Authentication" EntitySet="Authentications" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Authentication">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Customer" Relationship="MarinaModel.FK__Authentic__Custo__2F10007B" FromRole="Authentication" ToRole="Customer" />
+        </EntityType>
+        <Association Name="FK__Authentic__Custo__2F10007B">
+          <End Type="MarinaModel.Customer" Role="Customer" Multiplicity="1" />
+          <End Type="MarinaModel.Authentication" Role="Authentication" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Authentication">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -239,6 +292,16 @@
                 <ScalarProperty Name="Width" ColumnName="Width" />
                 <ScalarProperty Name="Length" ColumnName="Length" />
                 <ScalarProperty Name="DockID" ColumnName="DockID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Authentications">
+            <EntityTypeMapping TypeName="MarinaModel.Authentication">
+              <MappingFragment StoreEntitySet="Authentication">
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

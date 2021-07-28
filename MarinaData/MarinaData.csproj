@@ -50,6 +50,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Authentication.cs">
+      <DependentUpon>MarinaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Customer.cs">
       <DependentUpon>MarinaModel.tt</DependentUpon>
     </Compile>
@@ -62,6 +65,7 @@
     <Compile Include="Lease.cs">
       <DependentUpon>MarinaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="MarinaManager.cs" />
     <Compile Include="MarinaModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

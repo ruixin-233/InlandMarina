@@ -29,5 +29,6 @@ namespace MarinaData
         public virtual DbSet<Dock> Docks { get; set; }
         public virtual DbSet<Lease> Leases { get; set; }
         public virtual DbSet<Slip> Slips { get; set; }
+        public virtual DbSet<Authentication> Authentications { get; set; }
     }
 }

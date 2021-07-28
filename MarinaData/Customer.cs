@@ -18,6 +18,7 @@ namespace MarinaData
         public Customer()
         {
             this.Leases = new HashSet<Lease>();
+            this.Authentications = new HashSet<Authentication>();
         }
     
         public int ID { get; set; }
@@ -28,5 +29,7 @@ namespace MarinaData
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Lease> Leases { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Authentication> Authentications { get; set; }
     }
 }
