@@ -29,5 +29,5 @@
         </asp:GridView>
     </div>
     <br />
-    <asp:Button ID="btnLease" runat="server" Text="Lease" />
+    <asp:Button ID="btnLease" runat="server" Text="Lease" class="btn btn-outline-info" />
 </asp:Content>

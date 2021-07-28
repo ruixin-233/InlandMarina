@@ -64,7 +64,7 @@ textarea {
 }
 
 .gridView {
-    max-height: 400px;
+    max-height: 390px;
     width: 400px;
     overflow: auto;
 }

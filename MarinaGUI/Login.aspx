@@ -14,8 +14,8 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <asp:Button ID="btnAuthenticate" runat="server" Text="Authenticate"  
-                        OnClick="btnAuthenticate_Click" />
+                    <asp:Button ID="btnAuthenticate" runat="server" Text="Authenticate" 
+                        class="btn btn-outline-info" OnClick="btnAuthenticate_Click" />
                 </td>                
             </tr>
             <tr>
