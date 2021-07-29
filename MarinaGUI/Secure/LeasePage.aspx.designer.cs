@@ -11,7 +11,7 @@ namespace MarinaGUI.Secure
 {
 
 
-    public partial class Lease
+    public partial class LeasePage
     {
 
         /// <summary>
@@ -51,12 +51,39 @@ namespace MarinaGUI.Secure
         protected global::System.Web.UI.WebControls.GridView gvSlips;
 
         /// <summary>
-        /// btnLease control.
+        /// lblMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLease;
+        protected global::System.Web.UI.WebControls.Label lblMessage;
+
+        /// <summary>
+        /// txt1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt1;
+
+        /// <summary>
+        /// txt2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt2;
+
+        /// <summary>
+        /// txt3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt3;
     }
 }

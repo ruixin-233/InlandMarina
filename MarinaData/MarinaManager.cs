@@ -121,10 +121,14 @@ namespace MarinaData
             return availableSlips;
         }
 
-        public static void LeaseSlips()
+
+        /////////////////////////////////     Lease Manager    ////////////////////////////////
+
+        public static void LeaseSlips(Lease lease)
         {
             MarinaEntities db = new MarinaEntities();
-
+            db.Leases.Add(lease);
+            db.SaveChanges();
         }
 
     }

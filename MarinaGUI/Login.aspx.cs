@@ -13,7 +13,6 @@ namespace MarinaGUI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
         protected void btnAuthenticate_Click(object sender, EventArgs e)
@@ -36,7 +35,7 @@ namespace MarinaGUI
                 // redirect to original page that was requested
                 FormsAuthentication.RedirectFromLoginPage(custDTO.FullName, false);
 
-                Response.Redirect("~/Secure/Lease");
+                Response.Redirect("~/Secure/LeasePage");
             }
         }
 

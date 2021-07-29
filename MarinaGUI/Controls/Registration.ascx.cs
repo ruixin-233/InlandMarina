@@ -48,7 +48,7 @@ namespace MarinaGUI.Controls
                 if (Session["CustomerID"] != null)
                 {
                     // get customer id out of Session
-                    int custID = Convert.ToInt32(Session["Id"]);
+                    int custID = Convert.ToInt32(Session["CustomerID"]);
                     Authentication authCust = MarinaManager.FindAuthentication(custID);
                     authCust.Customer.FirstName = txtFirstName.Text;
                     authCust.Customer.LastName = txtLastName.Text;
