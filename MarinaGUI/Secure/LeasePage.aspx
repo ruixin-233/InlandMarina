@@ -3,6 +3,7 @@
 <%@ Register Src="~/Controls/DockSelector.ascx" TagPrefix="uc1" TagName="DockSelector" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <asp:Label ID="lblMessage" runat="server" Text="" ForeColor="red"></asp:Label><br />
     <h2>Lease</h2>
     <br />
     <asp:Label ID="lblDock1" runat="server" Text="Pick a Dock: "></asp:Label>
@@ -14,8 +15,11 @@
 <%--    <asp:ListBox ID="lstSlips" runat="server" Height="195px" Width="130px"></asp:ListBox>--%>
 
     <div class="gridView">
-        <asp:GridView ID="gvSlips" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateSelectButton="True" OnSelectedIndexChanged="gvSlips_SelectedIndexChanged">
+        <asp:GridView ID="gvSlips" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="gvSlips_SelectedIndexChanged">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+            <Columns>
+                <asp:CommandField ButtonType="Button" SelectText="Lease" ShowSelectButton="True" />
+            </Columns>
             <EditRowStyle BackColor="#999999" />
             <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
             <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -29,11 +33,6 @@
         </asp:GridView>
     </div>
     <br />
-    <%--<asp:Button ID="btnLease" runat="server" Text="Lease" class="btn btn-outline-info" OnClick="btnLease_Click" />--%>
     <br />
-    <asp:Label ID="lblMessage" runat="server" ForeColor="Red" Text=""></asp:Label>
 
-    <asp:TextBox ID="txt1" runat="server"></asp:TextBox><br />
-    <asp:TextBox ID="txt2" runat="server"></asp:TextBox><br />
-    <asp:TextBox ID="txt3" runat="server"></asp:TextBox><br />
 </asp:Content>

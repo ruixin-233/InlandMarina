@@ -255,6 +255,7 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Secure\LeasePage.aspx" />
+    <Content Include="Secure\LeaseRecord.aspx" />
     <Content Include="Secure\UpdateRegistration.aspx" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
@@ -326,6 +327,13 @@
     </Compile>
     <Compile Include="Secure\LeasePage.aspx.designer.cs">
       <DependentUpon>LeasePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Secure\LeaseRecord.aspx.cs">
+      <DependentUpon>LeaseRecord.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Secure\LeaseRecord.aspx.designer.cs">
+      <DependentUpon>LeaseRecord.aspx</DependentUpon>
     </Compile>
     <Compile Include="Secure\UpdateRegistration.aspx.cs">
       <DependentUpon>UpdateRegistration.aspx</DependentUpon>

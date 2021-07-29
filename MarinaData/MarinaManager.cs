@@ -131,5 +131,13 @@ namespace MarinaData
             db.SaveChanges();
         }
 
+        //public static List<Lease> GetLeaseRecord(int custID)
+        //{
+        //    MarinaEntities db = new MarinaEntities();
+        //    var custLeaseRecord = db.Leases.
+        //        Where(s => s.CustomerID == custID).ToList();
+        //    return custLeaseRecord;
+        //}
+
     }
 }

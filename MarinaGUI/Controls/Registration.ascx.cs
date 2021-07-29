@@ -22,7 +22,7 @@ namespace MarinaGUI.Controls
                 // only need to do it when text boxes empty
                 {
                     // get customer ID out of the Session
-                    int custID = Convert.ToInt32(Session["Id"]);
+                    int custID = Convert.ToInt32(Session["CustomerID"]);
 
                     // get authentication record for this student
                     Authentication authCust = MarinaManager.FindAuthentication(custID);
@@ -80,7 +80,6 @@ namespace MarinaGUI.Controls
                 };
                 MarinaManager.AddAuthentication(authCust); // pass to the manager class for Add
                 Response.Redirect("~/Login"); // give the user opportunity to log in
-
             }
         }
 

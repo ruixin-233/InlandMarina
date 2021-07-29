@@ -2,7 +2,6 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2><%: Title %>.</h2>
-    <h3>Contact Information: </h3>
     <address>
         Inland Lake Marina<br />
         Box 123<br />
@@ -24,4 +23,5 @@
     <address>
         <strong>Contact Email:</strong> <a href="info@inlandmarina.com">info@inlandmarina.com</a>
     </address>
+
 </asp:Content>

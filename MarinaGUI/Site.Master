@@ -75,6 +75,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="~/Secure/UpdateRegistration" runat="server">Update Registration</a>
+                            <a class="dropdown-item" href="~/Secure/LeaseRecord" runat="server">Check Lease Record</a>
                         </div>
                     </li>
 
